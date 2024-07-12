@@ -4,7 +4,7 @@ import pandas as pd
 from sklearn.linear_model import LinearRegression
 
 # Load the dataset
-file_path = 'house_price_prediction_dataset.csv'  # Adjust this path if needed
+file_path = 'Projects/Project1/house_price_prediction_dataset.csv'  # Adjust this path if needed
 df = pd.read_csv(file_path)
 
 # Assume the model is trained using the same code provided earlier
