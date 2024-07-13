@@ -4,7 +4,7 @@ import pandas as pd
 from sklearn.linear_model import LinearRegression
 
 st.set_page_config(
-    page_title="MovieMatcher"
+    page_title="House Price Predictor"
 )
 # Load the dataset
 file_path = 'Projects/Project1/house_price_prediction_dataset.csv'  # Adjust this path if needed
