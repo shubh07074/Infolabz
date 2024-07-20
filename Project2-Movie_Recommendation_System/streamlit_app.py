@@ -10,7 +10,7 @@ st.set_page_config(
 )
 
 def fetch_poster_and_url(movie_id):
-    url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key=5a42257288559bfcd052f36fc26bbc02&language=en-US"
+    url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key=6fcfe36d2ac8608dede699f5f505abea&language=en-US"
     data = requests.get(url).json()
     if 'poster_path' in data:
         poster_path = data['poster_path']
