@@ -6,7 +6,7 @@ import base64
 
 st.set_page_config(
     page_title="MovieMatcher",
-    page_icon="Project2-Movie_Recommendation_System/icon.png"
+    page_icon="icon.png"
 )
 
 def fetch_poster_and_url(movie_id):
@@ -40,15 +40,13 @@ def get_base64_of_image(image_path):
     with open(image_path, "rb") as img_file:
         return base64.b64encode(img_file.read()).decode()
 
-# Paths to the background images
-background_image_path = "Project2-Movie_Recommendation_System/back.jpg"
-background_image_small_path = "Project2-Movie_Recommendation_System/back2.jpg"
+# Path to the background image
+background_image_path = "back.jpg"
 
-# Encode the images
+# Encode the image
 base64_image = get_base64_of_image(background_image_path)
-base64_image_small = get_base64_of_image(background_image_small_path)
 
-# Inject CSS to apply different backgrounds based on screen size
+# Inject CSS to apply the background image
 st.markdown(
     f"""
     <style>
@@ -58,23 +56,14 @@ st.markdown(
         background-repeat: no-repeat;
         background-attachment: fixed;
     }}
-
-    @media (max-width: 1150px) {{
-        .stApp {{
-            background: url(data:image/jpeg;base64,{base64_image_small});
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }}
-    }}
     </style>
     """,
     unsafe_allow_html=True
 )
 
-st.header('Movie Recommendation System')
-movies = pickle.load(open('Project2-Movie_Recommendation_System/movies.pkl', 'rb'))
-similarity = pickle.load(open('Project2-Movie_Recommendation_System/similarity.pkl', 'rb'))
+st.header('Movie Recommender System')
+movies = pickle.load(open('movies.pkl', 'rb'))
+similarity = pickle.load(open('similarity.pkl', 'rb'))
 movies = pd.DataFrame(movies)
 
 movie_list = movies['title'].tolist()
