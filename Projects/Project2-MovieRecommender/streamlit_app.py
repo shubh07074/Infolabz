@@ -6,7 +6,7 @@ import base64
 
 st.set_page_config(
     page_title="MovieMatcher",
-    page_icon="icon.png"
+    page_icon="https://drive.google.com/file/d/1spIE94QdUfSg8cUPTETceoVtgWl72t4Y/view?usp=sharing"
 )
 
 def fetch_poster_and_url(movie_id):
@@ -41,7 +41,7 @@ def get_base64_of_image(image_path):
         return base64.b64encode(img_file.read()).decode()
 
 # Path to the background image
-background_image_path = "back.jpg"
+background_image_path = "https://drive.google.com/file/d/1Yx7i8bMojnIFtX6u0l4mUdop48OhH0Nz/view?usp=sharing"
 
 # Encode the image
 base64_image = get_base64_of_image(background_image_path)
@@ -62,8 +62,8 @@ st.markdown(
 )
 
 st.header('Movie Recommender System')
-movies = pickle.load(open('movies.pkl', 'rb'))
-similarity = pickle.load(open('similarity.pkl', 'rb'))
+movies = pickle.load(open('https://drive.google.com/file/d/16ZxZjiQ6hg1wI7Nfgz7On001W03FMCbp/view?usp=sharing', 'rb'))
+similarity = pickle.load(open('https://drive.google.com/file/d/14hk3ul31Fnhm4z-eMpaEIiNkRfdeMbxr/view?usp=sharing', 'rb'))
 movies = pd.DataFrame(movies)
 
 movie_list = movies['title'].tolist()
